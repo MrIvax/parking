@@ -5,6 +5,8 @@
  */
 package parking;
 
+import utilidades.Utilidad;
+
 /**
  *
  * @author ADMINMJ
@@ -84,5 +86,20 @@ public class Empresa {
             System.out.println("Parking completo");
         }
 
+    }
+    public void salida(){
+        int nplaza;
+        // plazas.length es el numero totoal de plazas
+        // van desde la 0 hata  plazas.length-1 
+        nplaza=Utilidad.pedirNumeroEntero("Plaza que deja libra", 0,plazas.length-1);
+        if(plazas[nplaza].equalsIgnoreCase("ocupada"))
+        {
+            System.out.println("Plaza liberada");
+            plazas[nplaza]="libre";
+        }
+        else{
+            System.out.println("La plaza ya estaba libre");
+        }
+                
     }
 }
